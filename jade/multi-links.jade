@@ -1,0 +1,75 @@
+//output:../multi-links.html
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    meta(name='description', content='')
+    meta(name='author', content='')
+    script(src='http://code.jquery.com/jquery-3.1.1.min.js')
+    title multi-links
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
+    // Custom styles for this template
+    link(href='css/styles.css', rel='stylesheet')
+  form
+    body(onload="checkFileAPI();")
+      .container
+        h1.mb-2
+          |Easy Link Opener
+        div.col-xs-6
+          .form-group
+            label(for='exampleInputFile') Step 1 - Select Domains File
+            input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp', onchange='readText(this)')
+            small#fileHelp.form-text.text-muted
+              | Make sure the file is .txt and domains are separated by a new line
+          .form-group
+            label(for='exampleSelect2') Step 2 - Select Domain
+            select#exampleSelect2.form-control(multiple='',style="height:45vh")
+        
+        div.col-xs-6  
+          h1
+          | Step 3 - Check desired websites
+          fieldset.form-group
+
+            .form-check(style="display:flex; flex-direction: column; ")
+              label.form-check-label
+                input.form-check-input#isup(type='checkbox',checked=true)
+                |  IsUp
+              label.form-check-label
+                input.form-check-input#ping(type='checkbox',checked=true)
+                |  Ping
+              label.form-check-label
+                input.form-check-input#google-search(type='checkbox',checked=true)
+                |  Google search
+              label.form-check-label
+                input.form-check-input#vt-dom(type='checkbox',checked=true)
+                |  Virus Total Domains
+              label.form-check-label
+                input.form-check-input#vt-url(type='checkbox',checked=true)
+                |  Virus Total URL
+              label.form-check-label
+                input.form-check-input#threat-crowd(type='checkbox',checked=true)
+                |  ThreatCrowd
+              label.form-check-label
+                input.form-check-input#void(type='checkbox',checked=true)
+                |  URL Void
+              label.form-check-label
+                input.form-check-input#url-query(type='checkbox',checked=true)
+                |  URL query
+              label.form-check-label
+                input.form-check-input#wayback(type='checkbox')
+                |  Wayback Machine
+              label.form-check-label
+                input.form-check-input#central-ops(type='checkbox')
+                |  Central Ops
+            button.btn.btn-primary(type='submit') Go!
+  //
+    Bootstrap core JavaScript
+    ==================================================
+  // Placed at the end of the document so the pages load faster
+  script(src='http://code.jquery.com/jquery-3.1.1.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js', integrity='sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU', crossorigin='anonymous')
+  script(src='js/multi-links.js')

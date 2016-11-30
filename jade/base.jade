@@ -1,0 +1,56 @@
+//output:../index.html
+- var domainName = 'hillbillyhousewife.com';
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    meta(name='description', content='')
+    meta(name='author', content='')
+    script(src='http://code.jquery.com/jquery-3.1.1.min.js')
+    title #{domainName}
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
+
+    // Custom styles for this template
+    link(href='css/styles.css', rel='stylesheet')
+
+  body
+    
+    // Fixed navbar
+    .pos-f-t
+      #navbar-header.collapse
+        .container.bg-inverse.p-1
+          h3 Collapsed content
+          p Toggleable via the navbar brand.
+      nav.navbar.navbar-dark.navbar-static-top.bg-primary
+        .container
+          button.navbar-toggler.hidden-sm-up(type='button', data-toggle='collapse', data-target='#exCollapsingNavbar2', aria-expanded='false', aria-controls='exCollapsingNavbar2', aria-label='Toggle navigation')
+          #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+            a.navbar-brand(href='#') #{domainName}
+            ul.nav.navbar-nav
+              li.nav-item
+                a.nav-link(data-toggle='collapse',href='#general-info',data-parent='#accordion', aria-controls='general-info') General Info
+              li.nav-item
+                a.nav-link(data-toggle='collapse',href='#threat-crowd',data-parent='#accordion', aria-controls='threat-crowd') ThreatCrowd
+              li.nav-item
+                a.nav-link(href='#') More nav
+    // Begin page content
+    
+    .container
+      .mt-1.mb-2
+        h1 Domain - 
+          strong hillbillyhousewife.com
+      include accordion
+      
+  
+        
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    
+    script(src='http://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js', integrity='sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU', crossorigin='anonymous')

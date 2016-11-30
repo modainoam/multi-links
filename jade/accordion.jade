@@ -1,0 +1,30 @@
+#accordion(role='tablist', aria-multiselectable='true')
+  .card
+    #headingOne.card-header(role='tab')
+      h5.mb-0
+        a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#general-info', aria-expanded='false', aria-controls='general-info')
+          | General Info
+    #general-info.collapse(role='tabpanel', aria-labelledby='headingOne')
+      .card-block
+        code ping: false
+  .card
+    #headingTwo.card-header(role='tab')
+      h5.mb-0
+        a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#threat-crowd', aria-expanded='false', aria-controls='threat-crowd')
+          | Threat Crowd
+    #threat-crowd.collapse(role='tabpanel', aria-labelledby='headingTwo')
+      .card-block
+        .container
+          .mt-1
+            h1 Threat-crowd    
+          .threat-graph
+      
+            embed(src='http://www.threatcrowd.org/graphHtml.php?domain=hillbillyhousewife.com')        
+  .card
+    #headingThree.card-header(role='tab')
+      h5.mb-0
+        a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+          | Collapsible Group Item #3
+    #collapseThree.collapse(role='tabpanel', aria-labelledby='headingThree')
+      .card-block
+        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>multi-links</title>
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <!-- Custom styles for this template-->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <form>
+    <body onload="checkFileAPI();">
+      <div class="container">
+        <h1 class="mb-2">Easy Link Opener</h1>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="exampleInputFile">Step 1 - Select Domains File</label>
+            <input id="exampleInputFile" type="file" aria-describedby="fileHelp" onchange="readText(this)" class="form-control-file"><small id="fileHelp" class="form-text text-muted">Make sure the file is .txt and domains are separated by a new line</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect2">Step 2 - Select Domain</label>
+            <select id="exampleSelect2" multiple="" style="height:45vh" class="form-control"></select>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <h1></h1>Step 3 - Check desired websites
+          <fieldset class="form-group">
+            <div style="display:flex; flex-direction: column; " class="form-check">
+              <label class="form-check-label">
+                <input id="isup" type="checkbox" checked class="form-check-input"> IsUp
+              </label>
+              <label class="form-check-label">
+                <input id="ping" type="checkbox" checked class="form-check-input"> Ping
+              </label>
+              <label class="form-check-label">
+                <input id="google-search" type="checkbox" checked class="form-check-input"> Google search
+              </label>
+              <label class="form-check-label">
+                <input id="vt-dom" type="checkbox" checked class="form-check-input"> Virus Total Domains
+              </label>
+              <label class="form-check-label">
+                <input id="vt-url" type="checkbox" checked class="form-check-input"> Virus Total URL
+              </label>
+              <label class="form-check-label">
+                <input id="threat-crowd" type="checkbox" checked class="form-check-input"> ThreatCrowd
+              </label>
+              <label class="form-check-label">
+                <input id="void" type="checkbox" checked class="form-check-input"> URL Void
+              </label>
+              <label class="form-check-label">
+                <input id="url-query" type="checkbox" checked class="form-check-input"> URL query
+              </label>
+              <label class="form-check-label">
+                <input id="wayback" type="checkbox" class="form-check-input"> Wayback Machine
+              </label>
+              <label class="form-check-label">
+                <input id="central-ops" type="checkbox" class="form-check-input"> Central Ops
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Go!</button>
+          </fieldset>
+        </div>
+      </div>
+    </body>
+  </form>
+  <!--
+  Bootstrap core JavaScript
+  ==================================================
+  -->
+  <!-- Placed at the end of the document so the pages load faster-->
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+  <script src="js/multi-links.js"></script>
+</html>
