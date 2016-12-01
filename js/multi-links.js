@@ -50,16 +50,18 @@ function readText(filePath) {
 /**
 * display content using a basic HTML replacement
 */
-var options_html = "";
-function displayContents(txt) {
 
-   var el = document.getElementById('list');
-   domains_input = txt.split("\n");
-   domains_input.forEach( function(domain_input) {
+function displayContents(txt) {
+  var options_html = "";
+  var el = document.getElementById('list');
+  domains_input = txt.split("\n");
+  domains_input.forEach( function(domain_input) {
+    if (domain_input.length > 1) {
       domain_net = domain_input.replace('.noclick','');
       options_html += "<option>" + domain_net + "</option>";
-   });
-       $("#exampleSelect2").html(options_html);
+    };
+  });
+     $("#exampleSelect2").html(options_html);
   //  el.innerHTML = txt; //display output in DOM
 }
 
@@ -69,6 +71,7 @@ $(".btn-primary").click(function(e){
   var check_id;
 
   $("#exampleSelect2 option:selected").each(function(){
+    $(this).addClass("bg-success text-white");
     domain_name = $(this).text();
     var linkArray = [];
     $(".form-check-input:checked").each(function(){
@@ -113,4 +116,14 @@ $(".btn-primary").click(function(e){
     };
   });
 
+});
+
+
+// ********* Seleact and Deselect All ******  //
+$("#select-all-websites").click(function(){
+  $(".form-check-input").prop("checked", true);
+});
+
+$("#deselect-all-websites").click(function(){
+  $(".form-check-input").prop("checked", false);
 });

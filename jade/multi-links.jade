@@ -32,7 +32,11 @@ html(lang='en')
         div.col-xs-6  
           h1
           | Step 3 - Check desired websites
-          fieldset.form-group
+          fieldset.form-group.mt-1.mb-1
+            .form-check
+              .btn-group(role='group', aria-label='Basic example')
+                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-websites") Select All
+                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-websites") Deselect All
 
             .form-check(style="display:flex; flex-direction: column; ")
               label.form-check-label

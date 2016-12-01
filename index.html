@@ -30,7 +30,13 @@
         </div>
         <div class="col-xs-6"> 
           <h1></h1>Step 3 - Check desired websites
-          <fieldset class="form-group">
+          <fieldset class="form-group mt-1 mb-1">
+            <div class="form-check">
+              <div role="group" aria-label="Basic example" class="btn-group">
+                <button type="button" id="select-all-websites" class="btn btn-secondary bg-info text-white">Select All</button>
+                <button type="button" id="deselect-all-websites" class="btn btn-secondary bg-danger text-white">Deselect All</button>
+              </div>
+            </div>
             <div style="display:flex; flex-direction: column; " class="form-check">
               <label class="form-check-label">
                 <input id="isup" type="checkbox" checked class="form-check-input"> IsUp
