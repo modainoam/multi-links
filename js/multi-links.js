@@ -82,7 +82,12 @@ $(".btn-primary").click(function(e){
       if (check_id == "isup") {
         linkArray.push("http://www.isup.me/" + domain_name)
       };
+
       if (check_id == "google-search") {
+        linkArray.push("https://www.google.co.il/search?q=" + domain_name)
+      };
+
+      if (check_id == "google-in-site") {
         linkArray.push("https://www.google.co.il/search?q=site:" + domain_name)
       };
       if (check_id == "vt-dom") {
@@ -106,6 +111,10 @@ $(".btn-primary").click(function(e){
 
       if (check_id == "central-ops") {
         linkArray.push("https://centralops.net/co/DomainDossier.aspx?addr=" + domain_name)
+      };
+
+      if (check_id == "robtex") {
+        linkArray.push("https://www.robtex.com/?dns=" + domain_name)
       };
     });
     console.log(linkArray);
