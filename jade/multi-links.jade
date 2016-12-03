@@ -48,7 +48,9 @@ html(lang='en')
               +link-option("vt-url","Virus Total URL")
               +link-option("threat-crowd","ThreatCrowd")
               +link-option("void","URL Void")
-              +link-option("url-query","URL query")
+              +link-option("wot","WOT")
+              +link-option("google-malware","Google Malware Search")
+              
 
             button.btn.btn-primary.btn-basic(type='submit') Go!
         
@@ -62,11 +64,14 @@ html(lang='en')
                 button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
             
             .form-check.advanced-options(style="display:flex; flex-direction: column; ")
-              +link-option("alex","Alexa")
-              +link-option("google-malware","Google Malware Search")
-              +link-option("wayback","Wayback Machine", false)
-              +link-option("robtex","Robtex", false)
+
+              +link-option("alexa","Alexa")
+              +link-option("url-query","URL query")
+              +link-option("robtex","Robtex")
+              +link-option("norton","Norton SafeWeb")
               +link-option("central-ops","Central Ops", false)
+              +link-option("wayback","Wayback Machine", false)
+              +link-option("snapito","Snapito (screenshot tool)", false)
             button.btn.btn-primary.btn-advanced(type='submit') Go!
   //
     Bootstrap core JavaScript

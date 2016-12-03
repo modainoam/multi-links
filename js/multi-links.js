@@ -81,7 +81,12 @@ function getLink(check_id, domain_name){
     "void": "http://www.urlvoid.com/scan/" + domain_name,
     "wayback": "http://web.archive.org/web/" + domain_name,
     "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" ,
-    "robtex": "https://www.robtex.com/?dns=" + domain_name
+    "robtex": "https://www.robtex.com/?dns=" + domain_name,
+    "alexa": "http://www.alexa.com/siteinfo/" + domain_name,
+    "google-malware": "https://www.google.co.il/search?q=malware+" + domain_name,
+    "wot": "https://www.mywot.com/en/scorecard/" + domain_name,
+    "snapito": "https://snapito.com/screenshots/" + domain_name + ".html",
+    "norton": "https://safeweb.norton.com/report/show?url=" + domain_name
   }
   return links[check_id]
 };
