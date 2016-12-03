@@ -24,8 +24,8 @@
             <input id="exampleInputFile" type="file" aria-describedby="fileHelp" onchange="readText(this)" class="form-control-file"><small id="fileHelp" class="form-text text-muted">Make sure the file is .txt and domains are separated by a new line</small>
           </div>
           <div class="form-group">
-            <label for="exampleSelect2">Step 2 - Select Domain</label>
-            <select id="exampleSelect2" multiple="" style="height:45vh" class="form-control"></select>
+            <label for="domain-select">Step 2 - Select Domain</label>
+            <select id="domain-select" multiple="" style="height:45vh" class="form-control"></select>
           </div>
         </div>
         <div class="col-xs-3"> 
@@ -66,7 +66,7 @@
                 <input type="checkbox" checked="checked" id="url-query" class="form-check-input"/> URL query
               </label>
             </div>
-            <button type="submit" class="btn btn-primary">Go!</button>
+            <button type="submit" class="btn btn-primary btn-basic">Go!</button>
           </fieldset>
         </div>
         <div class="col-xs-3"> 
@@ -78,7 +78,7 @@
                 <button type="button" id="deselect-all-advanced-websites" class="btn btn-secondary bg-danger text-white">Deselect All</button>
               </div>
             </div>
-            <div style="display:flex; flex-direction: column; " class="form-check basic-options">
+            <div style="display:flex; flex-direction: column; " class="form-check advanced-options">
               <label class="form-check-label">
                 <input type="checkbox" checked="checked" id="alex" class="form-check-input"/> Alexa
               </label>
@@ -95,7 +95,7 @@
                 <input type="checkbox" id="central-ops" class="form-check-input"/> Central Ops
               </label>
             </div>
-            <button type="submit" class="btn btn-primary">Go!</button>
+            <button type="submit" class="btn btn-primary btn-advanced">Go!</button>
           </fieldset>
         </div>
       </div>

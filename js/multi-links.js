@@ -61,61 +61,45 @@ function displayContents(txt) {
       options_html += "<option>" + domain_net + "</option>";
     };
   });
+
      $("#domain-select").html(options_html);
   //  el.innerHTML = txt; //display output in DOM
 }
 
-$(".btn-basic").click(function(e){
-  e.preventDefault();
+function getLink(check_id, domain_name){
+// Retrieves the link according to the button checked
+  links = {
+    "ping": "http://pingme.info/ping/" + domain_name,
+    "ping": "http://pingme.info/ping/" + domain_name,
+    "isup": "http://www.isup.me/" + domain_name,
+    "google-search": "https://www.google.co.il/search?q=" + domain_name,
+    "google-in-site": "https://www.google.co.il/search?q=site:" + domain_name,
+    "vt-dom": "https://www.virustotal.com/en/domain/" + domain_name ,
+    "vt-url": "https://www.virustotal.com/latest-scan/http://" ,
+    "threat-crowd": "https://www.threatcrowd.org/domain.php?domain=" ,
+    "url-query": "http://urlquery.net/",
+    "void": "http://www.urlvoid.com/scan/" + domain_name,
+    "wayback": "http://web.archive.org/web/" + domain_name,
+    "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" ,
+    "robtex": "https://www.robtex.com/?dns=" + domain_name
+  }
+  return links[check_id]
+};
+
+function openLinks(type){
+// Open checked links of specified type (basic or advanced)
+
   var domain_name;
   var check_id;
+  var typeClass= "." + type + "-options ";
 
   $("#domain-select option:selected").each(function(){
     $(this).addClass("bg-success text-white");
     domain_name = $(this).text();
     var linkArray = [];
-    $(".form-check-input:checked").each(function(){
+    $(typeClass + ".form-check-input:checked").each(function(){
       check_id = $(this).attr("id");
-      if (check_id == "ping") {
-        linkArray.push("http://pingme.info/ping/" + domain_name)
-      };
-      if (check_id == "isup") {
-        linkArray.push("http://www.isup.me/" + domain_name)
-      };
-
-      if (check_id == "google-search") {
-        linkArray.push("https://www.google.co.il/search?q=" + domain_name)
-      };
-
-      if (check_id == "google-in-site") {
-        linkArray.push("https://www.google.co.il/search?q=site:" + domain_name)
-      };
-      if (check_id == "vt-dom") {
-        linkArray.push("https://www.virustotal.com/en/domain/" + domain_name + "/information/")
-      };
-      if (check_id == "vt-url") {
-        linkArray.push("https://www.virustotal.com/latest-scan/http://" + domain_name)
-      };
-      if (check_id == "threat-crowd") {
-        linkArray.push("https://www.threatcrowd.org/domain.php?domain=" + domain_name)
-      };
-      if (check_id == "url-query") {
-        linkArray.push("http://urlquery.net/")
-      };
-      if (check_id == "void") {
-        linkArray.push("http://www.urlvoid.com/scan/" + domain_name)
-      };
-      if (check_id == "wayback") {
-        linkArray.push("http://web.archive.org/web/" + domain_name)
-      };
-
-      if (check_id == "central-ops") {
-        linkArray.push("https://centralops.net/co/DomainDossier.aspx?addr=" + domain_name)
-      };
-
-      if (check_id == "robtex") {
-        linkArray.push("https://www.robtex.com/?dns=" + domain_name)
-      };
+      linkArray.push(getLink(check_id, domain_name) )
     });
     console.log(linkArray);
     for (var i = 0; i < linkArray.length; i++) {
@@ -124,15 +108,33 @@ $(".btn-basic").click(function(e){
 
     };
   });
+};
+
+$(".btn-basic").click(function(e){
+  e.preventDefault();
+  openLinks("basic")
 
 });
 
+$(".btn-advanced").click(function(e){
+  e.preventDefault();
+  openLinks("advanced")
+
+});
 
 // ********* Seleact and Deselect All ******  //
-$("#select-all-websites").click(function(){
-  $(".form-check-input").prop("checked", true);
+$("#select-all-basic-websites").click(function(){
+  $(".basic-options .form-check-input").prop("checked", true);
 });
 
-$("#deselect-all-websites").click(function(){
-  $(".form-check-input").prop("checked", false);
+$("#deselect-all-basic-websites").click(function(){
+  $(".basic-options .form-check-input").prop("checked", false);
+});
+
+$("#select-all-advanced-websites").click(function(){
+  $(".advanced-options .form-check-input").prop("checked", true);
+});
+
+$("#deselect-all-advanced-websites").click(function(){
+  $(".advanced-options .form-check-input").prop("checked", false);
 });

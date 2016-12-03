@@ -27,8 +27,8 @@ html(lang='en')
             small#fileHelp.form-text.text-muted
               | Make sure the file is .txt and domains are separated by a new line
           .form-group
-            label(for='exampleSelect2') Step 2 - Select Domain
-            select#exampleSelect2.form-control(multiple='',style="height:45vh")
+            label(for='domain-select') Step 2 - Select Domain
+            select#domain-select.form-control(multiple='',style="height:45vh")
         
         div.col-xs-3 
           h1
@@ -50,7 +50,7 @@ html(lang='en')
               +link-option("void","URL Void")
               +link-option("url-query","URL query")
 
-            button.btn.btn-primary(type='submit') Go!
+            button.btn.btn-primary.btn-basic(type='submit') Go!
         
         div.col-xs-3 
           h1
@@ -61,13 +61,13 @@ html(lang='en')
                 button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-advanced-websites") Select All
                 button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
             
-            .form-check.basic-options(style="display:flex; flex-direction: column; ")
+            .form-check.advanced-options(style="display:flex; flex-direction: column; ")
               +link-option("alex","Alexa")
               +link-option("google-malware","Google Malware Search")
               +link-option("wayback","Wayback Machine", false)
               +link-option("robtex","Robtex", false)
               +link-option("central-ops","Central Ops", false)
-            button.btn.btn-primary(type='submit') Go!
+            button.btn.btn-primary.btn-advanced(type='submit') Go!
   //
     Bootstrap core JavaScript
     ==================================================
