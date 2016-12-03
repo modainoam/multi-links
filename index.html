@@ -28,16 +28,16 @@
             <select id="exampleSelect2" multiple="" style="height:45vh" class="form-control"></select>
           </div>
         </div>
-        <div class="col-xs-6"> 
+        <div class="col-xs-3"> 
           <h1></h1>Step 3 - Check desired websites
           <fieldset class="form-group mt-1 mb-1">
             <div class="form-check">
               <div role="group" aria-label="Basic example" class="btn-group">
-                <button type="button" id="select-all-websites" class="btn btn-secondary bg-info text-white">Select All</button>
-                <button type="button" id="deselect-all-websites" class="btn btn-secondary bg-danger text-white">Deselect All</button>
+                <button type="button" id="select-all-basic-websites" class="btn btn-secondary bg-info text-white">Select All</button>
+                <button type="button" id="deselect-all-basic-websites" class="btn btn-secondary bg-danger text-white">Deselect All</button>
               </div>
             </div>
-            <div style="display:flex; flex-direction: column; " class="form-check">
+            <div style="display:flex; flex-direction: column; " class="form-check basic-options">
               <label class="form-check-label">
                 <input type="checkbox" checked="checked" id="isup" class="form-check-input"/> IsUp
               </label>
@@ -64,6 +64,26 @@
               </label>
               <label class="form-check-label">
                 <input type="checkbox" checked="checked" id="url-query" class="form-check-input"/> URL query
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Go!</button>
+          </fieldset>
+        </div>
+        <div class="col-xs-3"> 
+          <h1></h1>Advanced research tools
+          <fieldset class="form-group mt-1 mb-1">
+            <div class="form-check">
+              <div role="group" aria-label="Basic example" class="btn-group">
+                <button type="button" id="select-all-advanced-websites" class="btn btn-secondary bg-info text-white">Select All</button>
+                <button type="button" id="deselect-all-advanced-websites" class="btn btn-secondary bg-danger text-white">Deselect All</button>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction: column; " class="form-check basic-options">
+              <label class="form-check-label">
+                <input type="checkbox" checked="checked" id="alex" class="form-check-input"/> Alexa
+              </label>
+              <label class="form-check-label">
+                <input type="checkbox" checked="checked" id="google-malware" class="form-check-input"/> Google Malware Search
               </label>
               <label class="form-check-label">
                 <input type="checkbox" id="wayback" class="form-check-input"/> Wayback Machine

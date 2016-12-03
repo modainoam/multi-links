@@ -30,16 +30,16 @@ html(lang='en')
             label(for='exampleSelect2') Step 2 - Select Domain
             select#exampleSelect2.form-control(multiple='',style="height:45vh")
         
-        div.col-xs-6  
+        div.col-xs-3 
           h1
           | Step 3 - Check desired websites
           fieldset.form-group.mt-1.mb-1
             .form-check
               .btn-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-websites") Select All
-                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-websites") Deselect All
+                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-basic-websites") Select All
+                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-basic-websites") Deselect All
             
-            .form-check(style="display:flex; flex-direction: column; ")
+            .form-check.basic-options(style="display:flex; flex-direction: column; ")
               +link-option("isup","IsUp")
               +link-option("ping","Ping")
               +link-option("google-in-site","Google in-site search")
@@ -49,6 +49,21 @@ html(lang='en')
               +link-option("threat-crowd","ThreatCrowd")
               +link-option("void","URL Void")
               +link-option("url-query","URL query")
+
+            button.btn.btn-primary(type='submit') Go!
+        
+        div.col-xs-3 
+          h1
+          | Advanced research tools
+          fieldset.form-group.mt-1.mb-1
+            .form-check
+              .btn-group(role='group', aria-label='Basic example')
+                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-advanced-websites") Select All
+                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
+            
+            .form-check.basic-options(style="display:flex; flex-direction: column; ")
+              +link-option("alex","Alexa")
+              +link-option("google-malware","Google Malware Search")
               +link-option("wayback","Wayback Machine", false)
               +link-option("robtex","Robtex", false)
               +link-option("central-ops","Central Ops", false)

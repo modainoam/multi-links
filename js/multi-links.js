@@ -61,16 +61,16 @@ function displayContents(txt) {
       options_html += "<option>" + domain_net + "</option>";
     };
   });
-     $("#exampleSelect2").html(options_html);
+     $("#domain-select").html(options_html);
   //  el.innerHTML = txt; //display output in DOM
 }
 
-$(".btn-primary").click(function(e){
+$(".btn-basic").click(function(e){
   e.preventDefault();
   var domain_name;
   var check_id;
 
-  $("#exampleSelect2 option:selected").each(function(){
+  $("#domain-select option:selected").each(function(){
     $(this).addClass("bg-success text-white");
     domain_name = $(this).text();
     var linkArray = [];
