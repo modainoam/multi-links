@@ -1,4 +1,5 @@
 //output:../index.html
+include mixins
 doctype html
 html(lang='en')
   head
@@ -37,46 +38,20 @@ html(lang='en')
               .btn-group(role='group', aria-label='Basic example')
                 button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-websites") Select All
                 button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-websites") Deselect All
-
+            
             .form-check(style="display:flex; flex-direction: column; ")
-              label.form-check-label
-                input.form-check-input#isup(type='checkbox',checked=true)
-                |  IsUp
-              label.form-check-label
-                input.form-check-input#ping(type='checkbox',checked=true)
-                |  Ping
-                
-              label.form-check-label
-                input.form-check-input#google-in-site(type='checkbox',checked=true)
-                |  Google in-site search
-                
-              label.form-check-label
-                input.form-check-input#google-search(type='checkbox',checked=true)
-                |  Google search
-              label.form-check-label
-                input.form-check-input#vt-dom(type='checkbox',checked=true)
-                |  Virus Total Domains
-              label.form-check-label
-                input.form-check-input#vt-url(type='checkbox',checked=true)
-                |  Virus Total URL
-              label.form-check-label
-                input.form-check-input#threat-crowd(type='checkbox',checked=true)
-                |  ThreatCrowd
-              label.form-check-label
-                input.form-check-input#void(type='checkbox',checked=true)
-                |  URL Void
-              label.form-check-label
-                input.form-check-input#url-query(type='checkbox',checked=true)
-                |  URL query
-              label.form-check-label
-                input.form-check-input#wayback(type='checkbox')
-                |  Wayback Machine
-              label.form-check-label
-                input.form-check-input#robtex(type='checkbox')
-                |  Robtex
-              label.form-check-label
-                input.form-check-input#central-ops(type='checkbox')
-                |  Central Ops
+              +link-option("isup","IsUp")
+              +link-option("ping","Ping")
+              +link-option("google-in-site","Google in-site search")
+              +link-option("google-search","Google search")
+              +link-option("vt-dom","Virus Total Domains")
+              +link-option("vt-url","Virus Total URL")
+              +link-option("threat-crowd","ThreatCrowd")
+              +link-option("void","URL Void")
+              +link-option("url-query","URL query")
+              +link-option("wayback","Wayback Machine", false)
+              +link-option("robtex","Robtex", false)
+              +link-option("central-ops","Central Ops", false)
             button.btn.btn-primary(type='submit') Go!
   //
     Bootstrap core JavaScript

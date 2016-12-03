@@ -1,0 +1,4 @@
+mixin link-option(id, displayText,isChecked = true)
+  label.form-check-label
+    input.form-check-input(type='checkbox', checked=isChecked, id = "#{id}")
+    |  #{displayText}
