@@ -74,19 +74,21 @@ function getLink(check_id, domain_name){
     "isup": "http://www.isup.me/" + domain_name,
     "google-search": "https://www.google.co.il/search?q=" + domain_name,
     "google-in-site": "https://www.google.co.il/search?q=site:" + domain_name,
-    "vt-dom": "https://www.virustotal.com/en/domain/" + domain_name ,
-    "vt-url": "https://www.virustotal.com/latest-scan/http://" ,
-    "threat-crowd": "https://www.threatcrowd.org/domain.php?domain=" ,
+    "vt-dom": "https://www.virustotal.com/en/domain/" + domain_name + "/information/",
+    "vt-url": "https://www.virustotal.com/latest-scan/http://" + domain_name,
+    "threat-crowd": "https://www.threatcrowd.org/domain.php?domain=" + domain_name,
     "url-query": "http://urlquery.net/",
     "void": "http://www.urlvoid.com/scan/" + domain_name,
     "wayback": "http://web.archive.org/web/" + domain_name,
-    "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" ,
+    "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" + domain_name ,
     "robtex": "https://www.robtex.com/?dns=" + domain_name,
     "alexa": "http://www.alexa.com/siteinfo/" + domain_name,
-    "google-malware": "https://www.google.co.il/search?q=malware+" + domain_name,
+    "google-malware": 'https://www.google.co.il/search?q="' + domain_name + '"+(malware%7Cbotnet%7Cmalicious%7Cransomware%7Ctrojan%7Cvirus)',
     "wot": "https://www.mywot.com/en/scorecard/" + domain_name,
     "snapito": "https://snapito.com/screenshots/" + domain_name + ".html",
-    "norton": "https://safeweb.norton.com/report/show?url=" + domain_name
+    "norton": "https://safeweb.norton.com/report/show?url=" + domain_name,
+    "qutera": "https://quttera.com/detailed_report/" + domain_name,
+    "sucuri": "https://sitecheck.sucuri.net/results/" + domain_name
   }
   return links[check_id]
 };
