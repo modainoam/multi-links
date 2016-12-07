@@ -88,7 +88,8 @@ function getLink(check_id, domain_name){
     "snapito": "https://snapito.com/screenshots/" + domain_name + ".html",
     "norton": "https://safeweb.norton.com/report/show?url=" + domain_name,
     "qutera": "https://quttera.com/detailed_report/" + domain_name,
-    "sucuri": "https://sitecheck.sucuri.net/results/" + domain_name
+    "sucuri": "https://sitecheck.sucuri.net/results/" + domain_name,
+    "port-check": "http://my-addr.com/check-open-ports/check-listening-of-ports/check_ports_tool.php"
   }
   return links[check_id]
 };
