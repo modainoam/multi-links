@@ -63,6 +63,8 @@ function displayContents(txt) {
   });
 
      $("#domain-select").html(options_html);
+     //  Rebind double-click to new options
+    bindOptionsDblClick();
   //  el.innerHTML = txt; //display output in DOM
 }
 
@@ -83,7 +85,7 @@ function getLink(check_id, domain_name){
     "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" + domain_name ,
     "robtex": "https://www.robtex.com/?dns=" + domain_name,
     "alexa": "http://www.alexa.com/siteinfo/" + domain_name,
-    "google-malware": 'https://www.google.co.il/search?q="' + domain_name + '"+(malware%7Cbotnet%7Cmalicious%7Cransomware%7Ctrojan%7Cvirus)',
+    "google-malware": 'https://www.google.co.il/search?q="' + domain_name + '"+(malware%7Cbotnet%7Cmalicious%7Cransomware%7Ctrojan%7Cvirus%7Cphishing)',
     "wot": "https://www.mywot.com/en/scorecard/" + domain_name,
     "snapito": "https://snapito.com/screenshots/" + domain_name + ".html",
     "norton": "https://safeweb.norton.com/report/show?url=" + domain_name,
@@ -93,6 +95,14 @@ function getLink(check_id, domain_name){
   }
   return links[check_id]
 };
+
+function bindOptionsDblClick() {
+ $("option").dblclick(function(e){
+   e.preventDefault();
+   openLinks("basic");
+   console.log("db");
+ });
+ };
 
 function openLinks(type){
 // Open checked links of specified type (basic or advanced)
