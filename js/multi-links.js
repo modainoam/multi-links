@@ -65,6 +65,7 @@ function displayContents(txt) {
      $("#domain-select").html(options_html);
      //  Rebind double-click to new options
     bindOptionsDblClick();
+    bindOptionsClick();
   //  el.innerHTML = txt; //display output in DOM
 }
 
@@ -72,7 +73,7 @@ function getLink(check_id, domain_name){
 // Retrieves the link according to the button checked
   links = {
     "ping": "http://pingme.info/ping/" + domain_name,
-    "ping": "http://pingme.info/ping/" + domain_name,
+    "ping": "http://network-tools.com/default.asp?prog=ping&host=" + domain_name,
     "isup": "http://www.isup.me/" + domain_name,
     "google-search": 'https://www.google.co.il/search?q="' + domain_name + '"',
     "google-in-site": 'https://www.google.co.il/search?q=site:"' + domain_name + '"',
@@ -104,6 +105,20 @@ function bindOptionsDblClick() {
  });
  };
 
+function updateInputDomain() {
+  $("#domain-select option:selected").each(function(){
+  $("#inputDomain").val($(this).text());
+  }
+  )
+};
+
+function bindOptionsClick() {
+ $("option").click(function(e){
+   e.preventDefault();
+   updateInputDomain();
+ });
+}
+
 function openLinks(type){
 // Open checked links of specified type (basic or advanced)
 
@@ -111,21 +126,25 @@ function openLinks(type){
   var check_id;
   var typeClass= "." + type + "-options ";
 
-  $("#domain-select option:selected").each(function(){
-    $(this).addClass("bg-success text-white");
-    domain_name = $(this).text();
-    var linkArray = [];
-    $(typeClass + ".form-check-input:checked").each(function(){
-      check_id = $(this).attr("id");
-      linkArray.push(getLink(check_id, domain_name) )
-    });
-    console.log(linkArray);
-    for (var i = 0; i < linkArray.length; i++) {
-    // will open each link in the current window
-    window.open(linkArray[i], '_blank');
-
-    };
+  domain_name = $("#inputDomain").val();
+  var linkArray = [];
+  $(typeClass + ".form-check-input:checked").each(function(){
+    check_id = $(this).attr("id");
+    linkArray.push(getLink(check_id, domain_name) )
   });
+  console.log(linkArray);
+  for (var i = 0; i < linkArray.length; i++) {
+  // will open each link in the current window
+  window.open(linkArray[i], '_blank');
+  };
+
+
+  $("#domain-select option").each(function(){
+    if (domain_name == $(this).val()) {
+      $(this).addClass("bg-success text-white");
+    };
+  }
+  )
 };
 
 $(".btn-basic").click(function(e){

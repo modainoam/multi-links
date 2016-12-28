@@ -20,7 +20,7 @@ html(lang='en')
       .container
         h1.mb-2
           |Easy Link Opener
-        div.col-xs-6
+        div.col-xs-4
           .form-group
             label(for='exampleInputFile') Step 1 - Select Domains File
             input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp', onchange='readText(this)')
@@ -29,7 +29,14 @@ html(lang='en')
           .form-group
             label(for='domain-select') Step 2 - Select Domain
             select#domain-select.form-control(multiple='',style="height:45vh")
-        
+          .form-group
+            label(for='inputDomain') Domain Selected
+            input#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select Domain')
+
+            small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
+            
+
+            
         div.col-xs-3 
           h1
           | Step 3 - Check desired websites
@@ -80,5 +87,7 @@ html(lang='en')
     Bootstrap core JavaScript
     ==================================================
   // Placed at the end of the document so the pages load faster
+  script(src='https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js', integrity='sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js')
   script(src='js/multi-links.js')

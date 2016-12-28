@@ -13,3 +13,10 @@ body {
     width: 100%;
   }
 }
+
+
+input-group {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}

@@ -18,7 +18,7 @@
     <body onload="checkFileAPI();">
       <div class="container">
         <h1 class="mb-2">Easy Link Opener</h1>
-        <div class="col-xs-6">
+        <div class="col-xs-4">
           <div class="form-group">
             <label for="exampleInputFile">Step 1 - Select Domains File</label>
             <input id="exampleInputFile" type="file" aria-describedby="fileHelp" onchange="readText(this)" class="form-control-file"><small id="fileHelp" class="form-text text-muted">Make sure the file is .txt and domains are separated by a new line</small>
@@ -26,6 +26,10 @@
           <div class="form-group">
             <label for="domain-select">Step 2 - Select Domain</label>
             <select id="domain-select" multiple="" style="height:45vh" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label for="inputDomain">Domain Selected</label>
+            <input id="inputDomain" type="text" aria-describedby="inputDomainDescribe" placeholder="Select Domain" class="form-control"><small id="inputDomainDescribe" class="form-text text-muted">Select domain from list or enter your own</small>
           </div>
         </div>
         <div class="col-xs-3"> 
@@ -121,6 +125,8 @@
   ==================================================
   -->
   <!-- Placed at the end of the document so the pages load faster-->
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
   <script src="js/multi-links.js"></script>
 </html>
