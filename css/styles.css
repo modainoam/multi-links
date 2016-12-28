@@ -33,3 +33,8 @@ body {
 
 h1 {
   font-weight: bold; }
+
+.form-check-label:hover {
+  transition: font .3s ease;
+  font-size: 1.03rem;
+  font-weight: bold; }
