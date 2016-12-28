@@ -21,71 +21,79 @@ html(lang='en')
         h1.mb-2
           |Easy Link Opener
         div.col-xs-4
+
           .form-group
-            label(for='exampleInputFile') Step 1 - Select Domains File
+            label.font-weight-bold(for='exampleInputFile') Select Domains File
             input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp', onchange='readText(this)')
             small#fileHelp.form-text.text-muted
               | Make sure the file is .txt and domains are separated by a new line
           .form-group
-            label(for='domain-select') Step 2 - Select Domain
+            label.font-weight-bold(for='domain-select') Select Domain
             select#domain-select.form-control(multiple='',style="height:45vh")
-          .form-group
-            label(for='inputDomain') Domain Selected
-            .input-dom-container
-              input#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select Domain')
-              button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain')
-                img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
-            
-            small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
-            
-          
-            
-        div.col-xs-3 
-          h1
-          | Step 3 - Check desired websites
-          fieldset.form-group.mt-1.mb-1
-            .form-check
-              .btn-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-basic-websites") Select All
-                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-basic-websites") Deselect All
-            
-            .form-check.basic-options(style="display:flex; flex-direction: column; ")
-              +link-option("isup","IsUp")
-              +link-option("ping","Ping")
-              +link-option("google-in-site","Google in-site search")
-              +link-option("google-search","Google search")
-              +link-option("vt-dom","Virus Total Domains")
-              +link-option("vt-url","Virus Total URL")
-              +link-option("threat-crowd","ThreatCrowd")
-              +link-option("void","URL Void")
-              +link-option("wot","WOT")
-              +link-option("google-malware","Google Malware Search")
-              +link-option("url-query","URL query")
 
-            button.btn.btn-primary.btn-basic(type='submit') Go!
-        
-        div.col-xs-3 
-          h1
-          | Advanced research tools
-          fieldset.form-group.mt-1.mb-1
-            .form-check
-              .btn-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-info.text-white(type='button',id="select-all-advanced-websites") Select All
-                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
             
-            .form-check.advanced-options(style="display:flex; flex-direction: column; ")
+        .options-container.col-xs-8.container
+          div.col-xs-12.mb-1  
+            .form-group
+              label.font-weight-bold(for='inputDomain') Domain Selected
+              .input-dom-container
+                input.inputDomain#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select or Enter Domain')
+                button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain')
+                  img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
+                .btn-group.go-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white.btn-basic(type='submit') Basic
+                  button.btn.btn-secondary.bg-danger.text-white.btn-advanced(type='submit') Advanced  
 
-              +link-option("alexa","Alexa")
-              +link-option("robtex","Robtex")
-              +link-option("norton","Norton SafeWeb")
-              +link-option("qutera","Qutera")
-              +link-option("sucuri","Sucuri")
-              +link-option("port-check","Port Check")
-              +link-option("central-ops","Central Ops", false)
-              +link-option("wayback","Wayback Machine", false)
+              small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
+            
+                      
+          div.col-xs-6 
+            div
+              h6.font-weight-bold
+                | Check desired websites
+            fieldset.form-group.mt-1.mb-1
+              .form-check
+                .btn-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-basic-websites") Select All
+                  button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-basic-websites") Deselect All
               
-              //- +link-option("snapito","Snapito (screenshot tool)", false)
-            button.btn.btn-primary.btn-advanced(type='submit') Go!
+              .form-check.basic-options(style="display:flex; flex-direction: column; ")
+                +link-option("isup","IsUp")
+                +link-option("ping","Ping")
+                +link-option("google-in-site","Google in-site search")
+                +link-option("google-search","Google search")
+                +link-option("vt-dom","Virus Total Domains")
+                +link-option("vt-url","Virus Total URL")
+                +link-option("threat-crowd","ThreatCrowd")
+                +link-option("void","URL Void")
+                +link-option("wot","WOT")
+                +link-option("google-malware","Google Malware Search")
+                +link-option("url-query","URL query")
+
+              
+          
+          div.col-xs-6 
+            h6.font-weight-bold
+              | Advanced research tools
+            fieldset.form-group.mt-1.mb-1
+              .form-check
+                .btn-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-advanced-websites") Select All
+                  button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
+              
+              .form-check.advanced-options(style="display:flex; flex-direction: column; ")
+
+                +link-option("alexa","Alexa")
+                +link-option("robtex","Robtex")
+                +link-option("norton","Norton SafeWeb")
+                +link-option("qutera","Qutera")
+                +link-option("sucuri","Sucuri")
+                +link-option("port-check","Port Check")
+                +link-option("central-ops","Central Ops", false)
+                +link-option("wayback","Wayback Machine", false)
+                
+                //- +link-option("snapito","Snapito (screenshot tool)", false)
+            
   //
     Bootstrap core JavaScript
     ==================================================

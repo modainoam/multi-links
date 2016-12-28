@@ -14,11 +14,15 @@ body {
   }
 }
 
+.inputDomain {
+  width: 40%;
+}
 
 .input-dom-container {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  flex-wrap: nowrap;
 }
 
 .clippy {
@@ -31,5 +35,15 @@ body {
 
 .btn-clip {
   display: inline-block;
+  margin-left: -1rem;
+  background: #ddd;
 
+}
+
+.go-group {
+  margin-left: 0.5rem;
+}
+
+h1 {
+  font-weight: bold;
 }
