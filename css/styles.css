@@ -1,13 +1,23 @@
 body {
-  padding-top: 10px;
-}
+  padding-top: 10px; }
 
 .threat-graph {
   border: 1px #000 solid;
-  width: 100%;
-}
+  width: 100%; }
+  .threat-graph embed {
+    height: 100vh;
+    width: 100%; }
 
-.threat-graph embed {
-  height: 100vh;
+.input-dom-container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex; }
+
+.clippy {
+  display: inline;
   width: 100%;
-}
+  height: auto;
+  width: 1rem; }
+
+.btn-clip {
+  display: inline-block; }

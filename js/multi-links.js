@@ -175,3 +175,5 @@ $("#select-all-advanced-websites").click(function(){
 $("#deselect-all-advanced-websites").click(function(){
   $(".advanced-options .form-check-input").prop("checked", false);
 });
+
+new Clipboard('.btn-clip');

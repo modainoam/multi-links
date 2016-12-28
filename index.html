@@ -29,7 +29,10 @@
           </div>
           <div class="form-group">
             <label for="inputDomain">Domain Selected</label>
-            <input id="inputDomain" type="text" aria-describedby="inputDomainDescribe" placeholder="Select Domain" class="form-control"><small id="inputDomainDescribe" class="form-text text-muted">Select domain from list or enter your own</small>
+            <div class="input-dom-container">
+              <input id="inputDomain" type="text" aria-describedby="inputDomainDescribe" placeholder="Select Domain" class="form-control">
+              <button type="button" data-clipboard-target="#inputDomain" class="btn btn-secondary btn-clip"><img src="assets/clippy.svg" alt="Copy to clipboard" class="clippy"></button>
+            </div><small id="inputDomainDescribe" class="form-text text-muted">Select domain from list or enter your own</small>
           </div>
         </div>
         <div class="col-xs-3"> 

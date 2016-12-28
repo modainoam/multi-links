@@ -31,11 +31,14 @@ html(lang='en')
             select#domain-select.form-control(multiple='',style="height:45vh")
           .form-group
             label(for='inputDomain') Domain Selected
-            input#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select Domain')
-
+            .input-dom-container
+              input#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select Domain')
+              button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain')
+                img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
+            
             small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
             
-
+          
             
         div.col-xs-3 
           h1
