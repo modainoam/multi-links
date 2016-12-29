@@ -110,7 +110,6 @@ function bindOptionsDblClick() {
  $("option").dblclick(function(e){
    e.preventDefault();
    openLinks("basic");
-   console.log("db");
  });
  };
 
@@ -141,7 +140,6 @@ function openLinks(type){
     check_id = $(this).attr("id");
     linkArray.push(getLink(check_id, domain_name) )
   });
-  console.log(linkArray);
   for (var i = 0; i < linkArray.length; i++) {
   // will open each link in the current window
   window.open(linkArray[i], '_blank');
