@@ -2,6 +2,11 @@
 // Create new clipboard object using clipboard.js
 new Clipboard('.btn-clip');
 
+// Enable tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 var reader; //GLOBAL File Reader object for demo purpose only
 
 

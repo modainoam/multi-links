@@ -38,7 +38,7 @@ html(lang='en')
               label.font-weight-bold(for='inputDomain') Domain Selected
               .input-dom-container
                 input.inputDomain#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select or Enter Domain')
-                button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain')
+                button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain' ,data-toggle="tooltip" data-placement="top" title="Copy to Clipboard")
                   img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
                 .btn-group.go-group(role='group', aria-label='Basic example')
                   button.btn.btn-secondary.bg-primary.text-white.btn-basic(type='submit') Basic
