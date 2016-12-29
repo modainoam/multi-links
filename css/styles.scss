@@ -48,8 +48,20 @@ h1 {
   font-weight: bold;
 }
 
-.form-check-label:hover {
-  transition: font .3s ease;
+.check-site-description:hover {
   font-size: 1.03rem;
+  font-weight: bold;
+  transition: font .3s ease;
+}
+
+.svg {
+  fill: #000;
+  height: 1rem;
+  margin-left: .2rem;
+}
+.svg:hover {
+  fill: #333;
+  transform: scale(1.4);
+  transition: font .3s ease;
   font-weight: bold;
 }

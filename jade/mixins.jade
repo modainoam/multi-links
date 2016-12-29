@@ -1,4 +1,7 @@
 mixin link-option(id, displayText,isChecked = true)
-  label.form-check-label
-    input.form-check-input(type='checkbox', checked=isChecked, id = "#{id}")
-    |  #{displayText}
+  .link-container
+    label.form-check-label
+      input.form-check-input(type='checkbox', checked=isChecked, id = "#{id}")
+      span.check-site-description  #{displayText}
+    a.external-link
+      img.link-icon.svg(src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Ei-external-link.svg')
