@@ -28,14 +28,14 @@ html(lang='en')
             small#fileHelp.form-text.text-muted
               | Make sure the file is .txt and domains are separated by a new line
           .form-group
-            label.font-weight-bold(for='domain-select') Select Domain
+            label.font-weight-bold(for='domain-select') Domains List
             select#domain-select.form-control(multiple='',style="height:45vh")
 
             
         .options-container.col-xs-8.container
           div.col-xs-12.mb-1  
             .form-group
-              label.font-weight-bold(for='inputDomain') Domain Selected
+              label.font-weight-bold(for='inputDomain') Enter domain or select from list
               .input-dom-container
                 input.inputDomain#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select or Enter Domain')
                 button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain' ,data-toggle="tooltip" data-placement="top" title="Copy to Clipboard")
@@ -50,7 +50,7 @@ html(lang='en')
           div.col-xs-6 
             div
               h6.font-weight-bold
-                | Check desired websites
+                | Basic tools
             fieldset.form-group.mt-1.mb-1
               .form-check
                 .btn-group(role='group', aria-label='Basic example')
@@ -74,7 +74,7 @@ html(lang='en')
           
           div.col-xs-6 
             h6.font-weight-bold
-              | Advanced research tools
+              | Advanced tools
             fieldset.form-group.mt-1.mb-1
               .form-check
                 .btn-group(role='group', aria-label='Basic example')
