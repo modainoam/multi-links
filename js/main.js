@@ -1,4 +1,6 @@
 
+var year = new Date().getFullYear();
+
 // Create new clipboard object using clipboard.js
 new Clipboard('.btn-clip');
 
@@ -101,7 +103,8 @@ function getLink(check_id, domain_name){
     "norton": "https://safeweb.norton.com/report/show?url=" + domain_name,
     "qutera": "https://quttera.com/detailed_report/" + domain_name,
     "sucuri": "https://sitecheck.sucuri.net/results/" + domain_name,
-    "port-check": "http://my-addr.com/check-open-ports/check-listening-of-ports/check_ports_tool.php"
+    "port-check": "http://my-addr.com/check-open-ports/check-listening-of-ports/check_ports_tool.php",
+    "url-query-search": "http://urlquery.net/search.php?q=" + domain_name + "&type=string&start=2011-06-25&end=" + (year + 1) + "-12-30&max=50"
   }
   return links[check_id]
 };
