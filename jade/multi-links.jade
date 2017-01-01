@@ -15,89 +15,86 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
     // Custom styles for this template
     link(href='css/styles.css', rel='stylesheet')
-  body(onload="checkFileAPI();")
-    .container
-      h1.mb-2
-        |Easy Link Opener
-      div.col-xs-4
+  form
+    body(onload="checkFileAPI();")
+      .container
+        h1.mb-2
+          |Easy Link Opener
+        div.col-xs-4
 
-        .form-group
-          label.font-weight-bold(for='exampleInputFile') Select Domains File
-          input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp', onchange='readText(this)')
-          small#fileHelp.form-text.text-muted
-            | Make sure the file is .txt and domains are separated by a new line
-        .form-group
-          label.font-weight-bold(for='domain-select') Domains List
-          select#domain-select.form-control(multiple='',style="height:45vh")
-
-          
-      .options-container.col-xs-8.container
-        div.col-xs-12.mb-1  
           .form-group
-            label.font-weight-bold(for='inputDomain') Enter domain or select from list
-            .input-dom-container
-              input.inputDomain#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select or Enter Domain')
-              button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain' ,data-toggle="tooltip" data-placement="top" title="Copy to Clipboard")
-                img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
-              .btn-group.go-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-primary.text-white.btn-basic(type='submit') Basic
-                button.btn.btn-secondary.bg-danger.text-white.btn-advanced(type='submit') Advanced  
-
-            small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
-          
-                    
-        div.col-xs-6 
-          div
-            h6.font-weight-bold
-              | Basic tools
-          fieldset.form-group.mt-1.mb-1
-            .form-check
-              .btn-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-basic-websites") Select All
-                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-basic-websites") Deselect All
-            
-            .form-check.basic-options(style="display:flex; flex-direction: column; ")
-              +link-option("isup","IsUp")
-              +link-option("ping","Ping")
-              +link-option("google-in-site","Google in-site search")
-              +link-option("google-search","Google search")
-              +link-option("vt-dom","Virus Total Domains")
-              +link-option("vt-url","Virus Total URL")
-              +link-option("threat-crowd","ThreatCrowd")
-              +link-option("void","URL Void")
-              +link-option("wot","WOT")
-              +link-option("google-malware","Google Malware Search")
-              +link-option("url-query-search","URL query Search")
-              +link-option("url-query","URL query")
+            label.font-weight-bold(for='exampleInputFile') Select Domains File
+            input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp', onchange='readText(this)')
+            small#fileHelp.form-text.text-muted
+              | Make sure the file is .txt and domains are separated by a new line
+          .form-group
+            label.font-weight-bold(for='domain-select') Domains List
+            select#domain-select.form-control(multiple='',style="height:45vh")
 
             
-        
-        div.col-xs-6 
-          h6.font-weight-bold
-            | Advanced tools
-          fieldset.form-group.mt-1.mb-1
-            .form-check
-              .btn-group(role='group', aria-label='Basic example')
-                button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-advanced-websites") Select All
-                button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
-            
-            .form-check.advanced-options(style="display:flex; flex-direction: column; ")
+        .options-container.col-xs-8.container
+          div.col-xs-12.mb-1  
+            .form-group
+              label.font-weight-bold(for='inputDomain') Enter domain or select from list
+              .input-dom-container
+                input.inputDomain#inputDomain.form-control(type='text', aria-describedby='inputDomainDescribe', placeholder='Select or Enter Domain')
+                button.btn.btn-secondary.btn-clip(type='button', data-clipboard-target='#inputDomain' ,data-toggle="tooltip" data-placement="top" title="Copy to Clipboard")
+                  img.clippy(src='assets/clippy.svg',  alt='Copy to clipboard')
+                .btn-group.go-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white.btn-basic(type='submit') Basic
+                  button.btn.btn-secondary.bg-danger.text-white.btn-advanced(type='submit') Advanced  
 
-              +link-option("alexa","Alexa")
-              +link-option("robtex","Robtex")
-              +link-option("norton","Norton SafeWeb")
-              +link-option("qutera","Qutera")
-              +link-option("sucuri","Sucuri")
-              +link-option("port-check","Port Check")
-              +link-option("central-ops","Central Ops", false)
-              +link-option("wayback","Wayback Machine", false)
+              small#inputDomainDescribe.form-text.text-muted Select domain from list or enter your own
+            
+                      
+          div.col-xs-6 
+            div
+              h6.font-weight-bold
+                | Basic tools
+            fieldset.form-group.mt-1.mb-1
+              .form-check
+                .btn-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-basic-websites") Select All
+                  button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-basic-websites") Deselect All
               
-    //- +link-option("snapito","Snapito (screenshot tool)", false)
-    //- Inivisible form for POST request (centralOps)
-    form#invisible_form(action='https://centralops.net/co/DomainDossier.aspx', method='post', target='_blank')
-      each param in ['addr','dom_whois','dom_dns','traceroute','net_whois','svc_scan']
-        input(class = "new_window_post" name='#{param}', value='1', type="hidden")
-    
+              .form-check.basic-options(style="display:flex; flex-direction: column; ")
+                +link-option("isup","IsUp")
+                +link-option("ping","Ping")
+                +link-option("google-in-site","Google in-site search")
+                +link-option("google-search","Google search")
+                +link-option("vt-dom","Virus Total Domains")
+                +link-option("vt-url","Virus Total URL")
+                +link-option("threat-crowd","ThreatCrowd")
+                +link-option("void","URL Void")
+                +link-option("wot","WOT")
+                +link-option("google-malware","Google Malware Search")
+                +link-option("url-query-search","URL query Search")
+                +link-option("url-query","URL query")
+
+              
+          
+          div.col-xs-6 
+            h6.font-weight-bold
+              | Advanced tools
+            fieldset.form-group.mt-1.mb-1
+              .form-check
+                .btn-group(role='group', aria-label='Basic example')
+                  button.btn.btn-secondary.bg-primary.text-white(type='button',id="select-all-advanced-websites") Select All
+                  button.btn.btn-secondary.bg-danger.text-white(type='button',id="deselect-all-advanced-websites") Deselect All
+              
+              .form-check.advanced-options(style="display:flex; flex-direction: column; ")
+
+                +link-option("alexa","Alexa")
+                +link-option("robtex","Robtex")
+                +link-option("norton","Norton SafeWeb")
+                +link-option("qutera","Qutera")
+                +link-option("sucuri","Sucuri")
+                +link-option("port-check","Port Check")
+                +link-option("central-ops","Central Ops", false)
+                +link-option("wayback","Wayback Machine", false)
+                
+                //- +link-option("snapito","Snapito (screenshot tool)", false)
+            
   //
     Bootstrap core JavaScript
     ==================================================
