@@ -137,7 +137,7 @@ function openLinks(type){
   var check_id;
   var typeClass= "." + type + "-options ";
 
-  domain_name = $("#inputDomain").val();
+  domain_name = $("#inputDomain").val().trim();
   var linkArray = [];
   $(typeClass + ".form-check-input:checked").each(function(){
     check_id = $(this).attr("id");
@@ -150,7 +150,7 @@ function openLinks(type){
 
 
   $("#domain-select option").each(function(){
-    if (domain_name == $(this).val()) {
+    if (domain_name == $(this).val().trim()) {
       $(this).addClass("bg-success text-white");
     };
   }
@@ -189,7 +189,7 @@ $("#deselect-all-advanced-websites").click(function(){
 function bindExternalLinks() {
   $(".external-link").click(function(e){
      var check_id = $(this).first().siblings("label").find("input").attr("id");
-     var domain_name = $("#inputDomain").val();
+     var domain_name = $("#inputDomain").val().trim();
      window.open(getLink(check_id, domain_name), '_blank');
 
   });

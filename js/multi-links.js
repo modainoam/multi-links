@@ -125,7 +125,7 @@ function getLink(check_id, domain_name){
     "url-query": "http://urlquery.net/",
     "void": "http://www.urlvoid.com/scan/" + domain_name,
     "wayback": "http://web.archive.org/web/" + domain_name,
-    "central-ops": "https://centralops.net/co/DomainDossier.aspx?dom_whois=1&svc_scan=1&traceroute=1&net_whois=1&dom_dns=1&addr=" + domain_name ,
+    "central-ops": "https://centralops.net/co/DomainDossier.aspx?addr=" + domain_name ,
     "robtex": "https://www.robtex.com/?dns=" + domain_name,
     "alexa": "http://www.alexa.com/siteinfo/" + domain_name,
     "google-malware": 'https://www.google.co.il/search?q="' + domain_name + '"+(malware%7Cbotnet%7Cmalicious%7Cransomware%7Ctrojan%7Cvirus%7Cphishing)',
@@ -168,7 +168,7 @@ function openLinks(type){
   var check_id;
   var typeClass= "." + type + "-options ";
 
-  domain_name = $("#inputDomain").val();
+  domain_name = $("#inputDomain").val().trim();
   var linkArray = [];
   $(typeClass + ".form-check-input:checked").each(function(){
     check_id = $(this).attr("id");
@@ -181,7 +181,7 @@ function openLinks(type){
 
 
   $("#domain-select option").each(function(){
-    if (domain_name == $(this).val()) {
+    if (domain_name == $(this).val().trim()) {
       $(this).addClass("bg-success text-white");
     };
   }
@@ -220,7 +220,7 @@ $("#deselect-all-advanced-websites").click(function(){
 function bindExternalLinks() {
   $(".external-link").click(function(e){
      var check_id = $(this).first().siblings("label").find("input").attr("id");
-     var domain_name = $("#inputDomain").val();
+     var domain_name = $("#inputDomain").val().trim();
      window.open(getLink(check_id, domain_name), '_blank');
 
   });
