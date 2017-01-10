@@ -112,8 +112,8 @@ function displayContents(txt) {
 }
 
 function getLink(check_id, domain_name){
-  portString = "30";
-  ["443", "125","80"].forEach(function(num){
+  portString = "21";
+  ["443", "125","80","22"].forEach(function(num){
   	portString += "%2C" + num;
   });
 // Retrieves the link according to the button checked
