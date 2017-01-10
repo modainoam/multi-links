@@ -38,11 +38,7 @@
   document.write("<sc"+"ript type='text/javascript' src='" +
   scJsHost+
   "statcounter.com/counter/counter.js'></"+"script>");
-noscript
-  .statcounter
-    a(title='web analytics', href='http://statcounter.com/', target='_blank')
-      img.statcounter(src='//c.statcounter.com/11215833/0/77358879/1/', alt='web\
-      analytics')
+
 // End of StatCounter Code for Default Guide
 
 
